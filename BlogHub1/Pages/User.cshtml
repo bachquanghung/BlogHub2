@@ -1,0 +1,29 @@
+﻿@page
+@model BlogHub1.Pages.UserModel
+@{
+}
+
+<h2 class="text-center">Welcome to your account!</h2>
+
+<div>
+    First Name:@Model.blogUser?.FirstName
+</div>
+
+<div>
+    Last Name:@Model.blogUser?.LastName
+</div>
+
+<div>
+    Email:@Model.blogUser?.Email
+</div>
+
+<div>
+    Phone:@Model.blogUser?.PhoneNumber
+</div>
+
+<div>
+    Address:@Model.blogUser?.Address
+</div>
+<div>
+    Created At: @Model.blogUser?.CreatedAt.ToString("MM/dd/yy")
+</div>
