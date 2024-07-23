@@ -9,7 +9,7 @@ namespace BlogHub1.Services
         public BlogHubDbContext(DbContextOptions options) : base(options) { 
 
         }
-
+        public DbSet<BlogHub1.Models.BlogUser> BlogUsers { get; set; } = default!;
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
@@ -18,9 +18,9 @@ namespace BlogHub1.Services
             admin.NormalizedName = "admin";
 
             var reader = new IdentityRole("reader");
-            admin.NormalizedName = "reader";
+            reader.NormalizedName = "reader";
 
-            builder.Entity<IdentityRole>().HasData(admin, reader);
+            builder.Entity<IdentityRole>().HasData(reader, admin);
         }
     }
 }
